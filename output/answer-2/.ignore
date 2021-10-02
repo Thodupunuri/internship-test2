@@ -1,0 +1,27 @@
+import csv
+import pandas as pd
+file = open('main.csv')
+csvreader = csv.reader(file)
+rows = []
+for row in csvreader:
+        rows.append(row)
+rows
+df=pd.read_csv('main.csv')
+p=df['age'].max()
+q=df['age'].min()
+print(p,q)
+l=[]
+ll=df.groupby(['age','occupation']).count()
+print(ll)
+min1=[]
+max1=[]
+d={}
+for i in ll:
+  min1.append(i[1])
+print(min1)
+
+  
+
+
+
+
